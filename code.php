@@ -26,7 +26,7 @@ function sendemail_verify($fname,$lname,$email,$verify_token)
     $mail->Body    = "
     <h5>Please Verify your Email with the Link Below</h5>
     <br></br>
-    <a href='http://localhost/bcc/verify-email.php?token=$verify_token'>click me</a>
+    <a href='http://localhost/bcc2/verify-email.php?token=$verify_token'>click me</a>
     ";
     $mail->send();
     echo'Email has been Sent';
@@ -46,7 +46,7 @@ if (isset($_POST['register_btn']))
     
         if(mysqli_num_rows($check_email_query_run)>0){
             $_SESSION['status'] = "This Email Already Exists";
-            header("Location: register.php");
+            header("Location: signup.php");
         }
         else{
             //insert user // registered users
@@ -55,11 +55,11 @@ if (isset($_POST['register_btn']))
             if ($query_run){
                 sendemail_verify("$fname","$lname","$email","$verify_token");
                 $_SESSION['status'] = "Registration Sucsessful. !Please Verify your email address";
-                header("Location: register.php");
+                header("Location: signup.php");
     
             }else{
                 $_SESSION['status'] = "Registration Failed";
-                header("Location: register.php");
+                header("Location: signup.php");
     
             }
         }

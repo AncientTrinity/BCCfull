@@ -3,9 +3,16 @@
 
 <!-- Footer-->
 <footer class="py-5 bg-black">
-            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Exe Coding Solutions 2023</p></div>
-        </footer>
-</body>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@popperjs/core@2"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- slick Slider JS-->
+      <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+      <!-- Sidebar JS-->
+      <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="js/custom.js"></script>
+   </body>
+   
+<!-- Mirrored from view.jqueryfuns.com/2021/7/14/10770e63bb166c1f4ed93fd82ffc72c1/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 May 2023 21:42:56 GMT -->
 </html>

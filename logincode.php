@@ -27,12 +27,12 @@ if (isset($_POST['login_btn']))
                 ];
 
                 $_SESSION['status']= "You Are Logged in Succesfully";
-                header("location: dashboard.php"); 
+                header("location:home.php"); 
                 exit(0);
             }
             else{
                 $_SESSION['status']= "Please Verify your email address to login 32";
-                header("location:login.php"); 
+                header("location:signin.php"); 
                 exit(0);
             }
 
@@ -40,12 +40,12 @@ if (isset($_POST['login_btn']))
         } else 
         {
             $_SESSION['status']= "Invalid Email Or Password";
-            header("location:login.php"); 
+            header("location:signin.php"); 
             exit(0);
         }
     }else{
         $_SESSION['status']= "ALL FEILDS ARE MADATORY";
-        header("location:login.php"); 
+        header("location:signin.php"); 
         exit(0);
     }
  

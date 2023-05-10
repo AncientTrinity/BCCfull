@@ -18,25 +18,25 @@ include ('includes/dbcon.php');
 
             if($update_query_run){
                 $_SESSION['status']= "Your account has been Succsessfully Verified.!";
-                header("location:login.php"); 
+                header("location:signin.php"); 
                 exit(0);
             }
             else{
                 $_SESSION['status']= "verification Failed";
-                header("location:login.php"); 
+                header("location:signin.php"); 
                 exit(0);
             }
         }
         else
         { 
             $_SESSION['status']= "Email Already verified Please login";
-            header("location:login.php"); 
+            header("location:signin.php"); 
             exit(0);
         }
     }else
     {
         $_SESSION['status']= "This Token Doesnt Exist";
-        header("location:login.php"); 
+        header("location:signin.php"); 
         exit(0);
     }
 
@@ -44,7 +44,7 @@ include ('includes/dbcon.php');
  }
  else {
     $_SESSION['status']= "Not Allowed";
-    header("location:login.php");
+    header("location:signin.php");
     exit(0);
  }
 ?>
