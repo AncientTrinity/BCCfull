@@ -11,46 +11,46 @@
                </a>
             </li>
             <li>
-               <a href="index-2.html"><i class="icofont-page mr-2"></i> Splash</a>
+               <a href="index-2.php"><i class="icofont-page mr-2"></i> Splash</a>
             </li>
             <li>
-               <a href="landing.html"><i class="icofont-stylish-right mr-2"></i> Landing</a>
+               <a href="landing.php"><i class="icofont-stylish-right mr-2"></i> Landing</a>
             </li>
             <li>
-               <a href="get-started.html"><i class="icofont-ui-play mr-2"></i> Get Started</a>
+               <a href="get-started.php"><i class="icofont-ui-play mr-2"></i> Get Started</a>
             </li>
             <li>
                <a href="#"><i class="icofont-key mr-2"></i> Authentication</a>
                <ul>
-                  <li><a href="signin.html">Sign In</a></li>
-                  <li><a href="signup.html">Sign Up</a></li>
-                  <li><a href="change-password.html">Change Password</a></li>
-                  <li><a href="verification.html">Verification</a></li>
+                  <li><a href="signin.php">Sign In</a></li>
+                  <li><a href="signup.php">Sign Up</a></li>
+                  <li><a href="change-password.php">Change Password</a></li>
+                  <li><a href="verification.php">Verification</a></li>
                </ul>
             </li>
-            <li><a href="home.html"><i class="icofont-ui-home mr-2"></i> Homepage</a></li>
-            <li><a href="gift-card.html"><i class="icofont-sale-discount mr-2"></i> Offers</a></li>
-            <li><a href="listing.html"><i class="icofont-list mr-2"></i> Listing</a></li>
-            <li><a href="bus-details.html"><i class="icofont-file-text mr-2"></i> Bus Detail</a></li>
-            <li><a href="select-seat.html"><i class="icofont-check-circled mr-2"></i> Select Seat</a></li>
-            <li><a href="payment.html"><i class="icofont-id-card mr-2"></i> Checkout</a></li>
-            <li><a href="payment-card.html"><i class="icofont-ui-v-card mr-2"></i> Payment</a></li>
+            <li><a href="home.php"><i class="icofont-ui-home mr-2"></i> Homepage</a></li>
+            <li><a href="gift-card.php"><i class="icofont-sale-discount mr-2"></i> Offers</a></li>
+            <li><a href="listing.php"><i class="icofont-list mr-2"></i> Listing</a></li>
+            <li><a href="bus-details.php"><i class="icofont-file-text mr-2"></i> Bus Detail</a></li>
+            <li><a href="select-seat.php"><i class="icofont-check-circled mr-2"></i> Select Seat</a></li>
+            <li><a href="payment.php"><i class="icofont-id-card mr-2"></i> Checkout</a></li>
+            <li><a href="payment-card.php"><i class="icofont-ui-v-card mr-2"></i> Payment</a></li>
             <li>
                <a href="#"><i class="icofont-user-alt-3 mr-2"></i> Profile Pages</a>
                <ul>
-                  <li><a href="profile.html"> Profile</a></li>
-                  <li><a href="your-ticket.html"> Your Ticket</a></li>
-                  <li><a href="my-ticket.html"> History</a></li>
-                  <li><a href="customer-feedback.html">  Customer Feedback</a></li>
+                  <li><a href="profile.php"> Profile</a></li>
+                  <li><a href="your-ticket.php"> Your Ticket</a></li>
+                  <li><a href="my-ticket.php"> History</a></li>
+                  <li><a href="customer-feedback.php">  Customer Feedback</a></li>
                </ul>
             </li>
             <li>
                <a href="#"><i class="icofont-page mr-2"></i> Extra Pages</a>
                <ul>
-                  <li><a href="support.html">Support</a></li>
-                  <li><a href="notification.html">Notification</a></li>
-                  <li><a href="not-available.html">Not Available</a></li>
-                  <li><a href="404.html"> Not Found</a></li>
+                  <li><a href="support.php">Support</a></li>
+                  <li><a href="notification.php">Notification</a></li>
+                  <li><a href="not-available.php">Not Available</a></li>
+                  <li><a href="404.php"> Not Found</a></li>
                </ul>
             </li>
             <li>
@@ -93,19 +93,19 @@
          </ul>
          <ul class="bottom-nav">
             <li class="email">
-               <a class="text-danger nav-item text-center" href="home.html" tabindex="0" role="menuitem">
+               <a class="text-danger nav-item text-center" href="home.php" tabindex="0" role="menuitem">
                   <p class="h5 m-0"><i class="icofont-ui-home text-danger"></i></p>
                   Home
                </a>
             </li>
             <li class="github">
-               <a href="gift-card.html" class="nav-item text-center" tabindex="0" role="menuitem">
+               <a href="gift-card.php" class="nav-item text-center" tabindex="0" role="menuitem">
                   <p class="h5 m-0"><i class="icofont-sale-discount"></i></p>
                   Offer
                </a>
             </li>
             <li class="ko-fi">
-               <a href="support.html" class="nav-item text-center" tabindex="0" role="menuitem">
+               <a href="support.php" class="nav-item text-center" tabindex="0" role="menuitem">
                   <p class="h5 m-0"><i class="icofont-support-faq"></i></p>
                   Help
                </a>

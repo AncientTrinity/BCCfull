@@ -23,60 +23,83 @@ include ('includes/navbar.php');
             <div class="font-weight-normal mb-0 d-flex align-items-center">
                <img src="img/logo.png" class="img-fluid osahan-nav-logo">
                <div class="ml-auto d-flex align-items-center">
-                  <a href="profile.html" class="mr-3"><img src="img/user1.jpg" class="img-fluid rounded-circle"></a>
+                  <a href="profile.php" class="mr-3"><img src="img/user1.jpg" class="img-fluid rounded-circle"></a>
                   <a class="toggle osahan-toggle h4 m-0 text-white ml-auto" href="#"><i class="icofont-navigation-menu"></i></a>
                </div>
             </div>
          </div>
          <div class="bg-danger px-3 pb-3">
             <div class="bg-white rounded-1 p-3">
-               <form action="listing.html">
-                  <div class="form-group border-bottom pb-2">
-                     <label for="exampleFormControlSelect1" class="mb-2"><span class="icofont-search-map text-danger"></span> From</label><br>
-                     <select class="js-example-basic-single form-control" name="state">
-                        <option value="Amritsar">Amritsar</option>
-                        <option value="Agra">Agra</option>
-                        <option value="Ahmedabad">Ahmedabad</option>
-                        <option value="Bareilly">Bareilly</option>
-                        <option value="Bathinda">Bathinda</option>
-                        <option value="Bhiwani">Bhiwani</option>
-                        <option value="Chandigarh">Chandigarh</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Fatehabad">Fatehabad</option>
-                        <option value="Gurgaon">Gurgaon</option>
-                        <option value="Hissar">Hissar</option>
-                        <option value="Jajpur">Jajpur</option>
-                        <option value="Jodhpur">Jodhpur</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Nanded">Nanded</option>
-                     </select>
-                  </div>
-                  <div class="form-group border-bottom pb-2">
-                     <label for="exampleFormControlSelect1" class="mb-2"><span class="icofont-google-map text-danger"></span> To</label><br>
-                     <select class="js-example-basic-single form-control" name="state">
-                        <option value="Amritsar">Amritsar</option>
-                        <option value="Agra">Agra</option>
-                        <option value="Ahmedabad">Ahmedabad</option>
-                        <option value="Bareilly">Bareilly</option>
-                        <option value="Bathinda">Bathinda</option>
-                        <option value="Bhiwani">Bhiwani</option>
-                        <option value="Chandigarh" selected>Chandigarh</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Fatehabad">Fatehabad</option>
-                        <option value="Gurgaon">Gurgaon</option>
-                        <option value="Hissar">Hissar</option>
-                        <option value="Jajpur">Jajpur</option>
-                        <option value="Jodhpur">Jodhpur</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Nanded">Nanded</option>
-                     </select>
-                  </div>
-                  <div class="form-group border-bottom pb-1">
-                     <label for="exampleFormControlSelect1" class="mb-2"><span class="icofont-ui-calendar text-danger"></span> Date</label><br>
-                     <input name="date" class="form-control border-0 p-0" type="date">
-                  </div>
-                  <button type="submit" class="btn btn-danger btn-block osahanbus-btn rounded-1">Search</button>
-               </form>
+            <form action="listing.php">
+            <div class="form-group border-bottom pb-2">
+               <label for="exampleFormControlSelect1" class="mb-2"><span class="icofont-search-map text-danger"></span> From</label><br>
+               <select class="js-example-basic-single form-control" name="state">
+                  <?php
+                  // Assuming you have a database connection
+                  include('includes/dbcon.php');
+                  $query = "SELECT `stoplocid`,`location` FROM `locationofstop`";
+                  $result = $con->query($query);
+
+                  $options = array();
+                  // Add an empty first option
+                  echo "<option value=''></option>";
+                  // Fetch the options from the result set
+                  if ($result->num_rows > 0) {
+                     while ($row = $result->fetch_assoc()) {
+                        $options[] = $row;
+                     }
+                  }
+                  // Loop through the options and generate <option> tags
+                  foreach ($options as $option) {
+                     echo "<option value='" . $option['stoplocid'] . "'>" . $option['location'] . "</option>";
+                  } ?>
+               </select>
+            </div>
+            <div class="form-group border-bottom pb-2">
+               <label for="exampleFormControlSelect1" class="mb-2"><span class="icofont-google-map text-danger"></span> To</label><br>
+               <select class="js-example-basic-single form-control" name="state">
+                  <?php
+                  // Assuming you have a database connection
+                  include('includes/dbcon.php');
+                  $query = "SELECT `stoplocid`,`location` FROM `locationofstop`";
+                  $result = $con->query($query);
+
+                  $options = array();
+                  // Add an empty first option
+                  echo "<option value=''></option>";
+                  // Fetch the options from the result set
+                  if ($result->num_rows > 0) {
+                     while ($row = $result->fetch_assoc()) {
+                        $options[] = $row;
+                     }
+                  }
+                  // Loop through the options and generate <option> tags
+                  foreach ($options as $option) {
+                     echo "<option value='" . $option['stoplocid'] . "'>" . $option['location'] . "</option>";
+                  } ?>
+               </select>
+            </div>
+            <div class="form-group border-bottom pb-1">
+               <label for="exampleFormControlSelect1" class="mb-2"><span class="icofont-ui-calendar text-danger"></span> Date</label><br>
+               <input name="date" id="date-input" class="form-control border-0 p-0" type="date">
+
+               <script>
+                  var dateInput = document.getElementById('date-input');
+
+                  dateInput.addEventListener('change', function() {
+                     var selectedDate = dateInput.value;
+                     var parts = selectedDate.split('-');
+                     var year = parts[0];
+                     var month = parts[2];
+                     var day = parts[1];
+                     var formattedDate = year + '-' + day + '-' + month;
+                     dateInput.value = formattedDate;
+                  });
+               </script>
+
+            </div>
+            <button type="submit" class="btn btn-danger btn-block osahanbus-btn rounded-1">Search</button>
+         </form>
             </div>
          </div>
          <div class="p-3 bg-warning">
@@ -111,22 +134,22 @@ include ('includes/navbar.php');
             <h6 class="text-center">Bus Discounts For You</h6>
             <div class="row m-0">
                <div class="col-6 py-1 pr-1 pl-0">
-                  <a href="listing.html">
+                  <a href="listing.php">
                   <img class="img-fluid rounded-1 shadow-sm" src="img/offer1.jpg" alt="">
                   </a>
                </div>
                <div class="col-6 py-1 pl-1 pr-0">
-                  <a href="listing.html">
+                  <a href="listing.php">
                   <img class="img-fluid rounded-1 shadow-sm" src="img/offer2.jpg" alt="">
                   </a>
                </div>
                <div class="col-6 py-1 pr-1 pl-0">
-                  <a href="listing.html">
+                  <a href="listing.php">
                   <img class="img-fluid rounded-1 shadow-sm" src="img/offer3.jpg" alt="">
                   </a>
                </div>
                <div class="col-6 py-1 pl-1 pr-0">
-                  <a href="listing.html">
+                  <a href="listing.php">
                   <img class="img-fluid rounded-1 shadow-sm" src="img/offer4.jpg" alt="">
                   </a>
                </div>
