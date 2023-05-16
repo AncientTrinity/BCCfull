@@ -6,6 +6,7 @@
                   <div class="text-white">
                      <h6 class="mb-0"><?=$_SESSION['auth_user']['fname']?></h6>
                      <small><?=$_SESSION['auth_user']['email']?></small><br>
+                     <small><?=$_SESSION['auth_user']['userid']?></small><br>
                      <span class="f-10 text-white-50">Version 1.32</span>    
                   </div>
                </a>

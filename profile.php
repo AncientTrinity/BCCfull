@@ -18,7 +18,7 @@ include ('includes/navbar.php');
          </div>
          <!-- Profile -->
          <div class="px-3 pt-3 pb-5">
-            <form action="http://view.jqueryfuns.com/2021/7/14/10770e63bb166c1f4ed93fd82ffc72c1/profile.php">
+         <form action="editcode.php" method="post">
                <div class="d-flex justify-content-center rounded-2 mb-4">
                   <div class="form-profile w-100">
                      <div class="text-center mb-3 position-relative">
@@ -29,44 +29,23 @@ include ('includes/navbar.php');
                         <img src="img/profile.jpg" class="rounded-pill">
                      </div>
                      <div class="form-group">
-                        <label class="text-muted f-10 mb-1">User Name</label>
-                        <input type="number" class="form-control" placeholder="Enter User Name"  value="osahantech">
+                        <label class="text-muted f-10 mb-1">First Name</label>
+                        <input type="text" class="form-control" name="fname"  placeholder =<?php echo $_SESSION['auth_user']['fname'];?>>
                      </div>
                      <div class="form-group">
-                        <label class="text-muted f-10 mb-1">Mobile Number</label>
-                        <input type="number" class="form-control" placeholder="Enter Mobile Number"  value="1234567890">
+                        <label class="text-muted f-10 mb-1">Last Name</label>
+                        <input type="text" class="form-control" name="lname" placeholder =<?php echo $_SESSION['auth_user']['lname'];?>>
                      </div>
                      <div class="form-group">
-                        <label class="text-muted f-10 mb-1">Your Email</label>
-                        <input type="email" class="form-control" placeholder="Enter Your Email"  value="example@mail.com">
+                        <label class="text-muted f-10 mb-1">Your New Address</label>
+                        <input type="text" class="form-control" name="address" placeholder =<?php echo $_SESSION['auth_user']['address'];?>>
                      </div>
                      <div class="form-group">
-                        <label class="text-muted f-10 mb-1">City</label>
-                        <input type="number" class="form-control" placeholder="Enter City"  value="Ludh.">
-                     </div>
-                     <div class="form-group">
-                        <label class="text-muted f-10 mb-1">State</label>
-                        <input type="number" class="form-control" placeholder="Enter State"  value="Pun.">
-                     </div>
-                     <div class="form-group">
-                        <label class="text-muted f-10 mb-1">Address</label>
-                        <textarea class="form-control" placeholder="Enter Address">House #675, Sector #12, Road #20 Dhaka-123001</textarea>
-                     </div>
-                     <div class="form-group">
-                        <label class="text-muted f-10 mb-1">Life Insurance</label>
-                        <div class="mt-1">
-                           <div class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="yes" name="lifeinsurance" class="custom-control-input" checked>
-                              <label class="custom-control-label small" for="yes">Yes</label>
-                           </div>
-                           <div class="custom-control custom-radio custom-control-inline">
-                              <input type="radio" id="no" name="lifeinsurance" class="custom-control-input">
-                              <label class="custom-control-label small" for="no">No</label>
-                           </div>
-                        </div>
+                        <label class="text-muted f-10 mb-1">Phone Number</label>
+                        <input type="text" class="form-control" name="phonenumber" placeholder =<?php echo $_SESSION['auth_user']['phonenumber'];?>>
                      </div>
                      <div class="mb-5">
-                        <a href="home.php" class="btn btn-danger btn-block osahanbus-btn rounded-1">UPDATE PROFILE</a>
+                        <button type="submit" name="update_btn" class="btn btn-danger btn-block osahanbus-btn rounded-1">UPDATE PROFILE</button>
                      </div>
                   </div>
                </div>

@@ -28,6 +28,7 @@ include ('includes/header.php');
          </div>
          <div class="px-3 py-4">
             <form action="resetpass.php" method="POST">
+            <input type="hidden" value="<?php if(isset($_GET['token'])) {echo $_GET['token'];}?>">
                <div class="form-group">
                   <label class="text-muted f-10 mb-1">Email</label>
                   <input type="email"  name="email"class="form-control" placeholder="Enter Your Password" value="<?php if(isset($_GET['email'])) {echo $_GET['email'];}?>">

@@ -24,6 +24,9 @@ if (isset($_POST['login_btn']))
                     'userid'=>$row['userid'],
                     'fname'=> $row ['fname'],
                     'email'=> $row ['email'],
+                    'lname'=> $row ['lname'],
+                    'address'=> $row ['address'],
+                    'phonenumber'=> $row ['phonenumber'],
                 ];
 
                 $_SESSION['status']= "You Are Logged in Succesfully";

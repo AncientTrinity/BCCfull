@@ -1,6 +1,6 @@
 <?php 
 include('authentication.php');
-$pagetitle=" Dashboard";
+$pagetitle="Select Seat";
 include ('includes/header.php');
 include ('includes/navbar.php');
 
@@ -228,6 +228,25 @@ include ('includes/navbar.php');
             </div>
          </div>
       </div>
+      <form action="book_seat.php" method="post">
+    Seat Number:
+    <select name="seat_number">
+        <?php
+        // Retrieve the available seats
+        $sql = "SELECT * FROM seat WHERE is_booked = 0";
+        $result = $conn->query($sql);
+
+        // Generate the seat options dynamically
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $seatNumber = $row['seatno'];
+                echo "<option value='$seatNumber'>$seatNumber</option>";
+            }
+        }
+        ?>
+    </select>
+    <input type="submit" value="book_seat">
+</form>
       <!-- Continue Booking -->
       <div class="fixed-bottom view-seatbt p-3">
          <a href="payment.php" class="btn btn-danger btn-block d-flex align-items-center osahanbus-btn rounded-1">
