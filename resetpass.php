@@ -27,7 +27,7 @@ function  send_password_reset($get_fname,$get_email,$token)
     $mail->Body    = "
     <h5>Please Verify your Email with the Link Below</h5>
     <br></br>
-    <a href='http://localhost/bcc2/passwordres.php?token=$token&email=$get_email'>click me</a>
+    <a href='http://localhost/BCCfull/passwordres.php?token=$token&email=$get_email'>click me</a>
     ";
     $mail->send();
 }
