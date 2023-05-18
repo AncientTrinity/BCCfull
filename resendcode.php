@@ -27,7 +27,7 @@ function  resend_email_verify($fname,$email,$verify_token)
     $mail->Body    = "
     <h5>Please Verify your Email with the Link Below</h5>
     <br></br>
-    <a href='http://localhost/bcc2/verify-email.php?token=$verify_token'>click me</a>
+    <a href='http://localhost/BCCfull/verify-email.php?token=$verify_token'>click me</a>
     ";
     $mail->send();
 }

@@ -18,7 +18,7 @@ include ('includes/navbar.php');
          </div>
          <!-- Ticket -->
          <div class="ticket p-3">
-            <h6 class="mb-1 font-weight-bold text-dark">Travellers ISO 9002- 2009 Certified</h6>
+            <h6 class="mb-1 font-weight-bold text-dark">Yutong A/C Bus</h6>
             <div class="start-rating f-10 mb-3">
                <i class="icofont-star text-danger"></i>
                <i class="icofont-star text-danger"></i>

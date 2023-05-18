@@ -30,10 +30,10 @@ include ('includes/navbar.php');
          </div>
          <div class="bg-danger px-3 pb-3">
             <div class="bg-white rounded-1 p-3">
-            <form action="listing.php">
+            <form action="listing.php" method="POST">
             <div class="form-group border-bottom pb-2">
                <label for="exampleFormControlSelect1" class="mb-2"><span class="icofont-search-map text-danger"></span> From</label><br>
-               <select class="js-example-basic-single form-control" name="state">
+               <select class="js-example-basic-single form-control" name="pickup">
                   <?php
                   // Assuming you have a database connection
                   include('includes/dbcon.php');
@@ -51,13 +51,13 @@ include ('includes/navbar.php');
                   }
                   // Loop through the options and generate <option> tags
                   foreach ($options as $option) {
-                     echo "<option value='" . $option['stoplocid'] . "'>" . $option['location'] . "</option>";
+                     echo "<option value='" . $option['location'] . "'>" . $option['location'] . "</option>";
                   } ?>
                </select>
             </div>
             <div class="form-group border-bottom pb-2">
                <label for="exampleFormControlSelect1" class="mb-2"><span class="icofont-google-map text-danger"></span> To</label><br>
-               <select class="js-example-basic-single form-control" name="state">
+               <select class="js-example-basic-single form-control" name="dropoff">
                   <?php
                   // Assuming you have a database connection
                   include('includes/dbcon.php');
@@ -75,7 +75,7 @@ include ('includes/navbar.php');
                   }
                   // Loop through the options and generate <option> tags
                   foreach ($options as $option) {
-                     echo "<option value='" . $option['stoplocid'] . "'>" . $option['location'] . "</option>";
+                     echo "<option value='" . $option['location'] . "'>" . $option['location'] . "</option>";
                   } ?>
                </select>
             </div>
