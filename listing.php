@@ -10,6 +10,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $date = $_POST["date"];
 }
 
+if (isset($_GET['pickuploc']) && isset($_GET['destination']) && isset($_GET['date']))  {
+   $pickup = $_GET['pickuploc'];
+   $dropoff = $_GET['destination'];
+   $date = $_GET['date'];
+   
+   // Echo the values
+   echo "Data 1: " . $pickup . "<br>";
+   echo "Data 2: " . $dropoff ."<br>";
+   echo "Data 3: " . $date;
+   } else {
+   echo "No data received.";
+   }
+
 ?>
 <!-- Listing Page -->
 <div class="osahan-listing">
@@ -21,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
          <a href="home.php" class="text-white h6 mb-0"><i class="icofont-search-1"></i></a>
          <a href="#" class="mx-4 text-white h6 mb-0" data-toggle="modal" data-target="#filterModal"><i class="icofont-filter"></i></a>
          <a class="toggle osahan-toggle h4 m-0 text-white ml-auto" href="#"><i class="icofont-navigation-menu"></i></a>
+        
       </div>
    </div>
    <div class="osahan-listing p-0 m-0 row border-top">
@@ -62,6 +76,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           JOIN trips AS t1 ON bs.begin_locationid = t1.tripid
           JOIN trips AS t2 ON bs.end_locationid = t2.tripid
           WHERE loc1.location = '$pickup' AND loc2.location = '$dropoff' AND bs.date = '$date' ;";
+
+
 
       $result = mysqli_query($con, $query);
 
@@ -203,4 +219,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    </div>
 </div>
 <!-- sidebar -->
+
 <?php include('includes/footer.php'); ?>

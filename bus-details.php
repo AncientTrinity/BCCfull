@@ -8,7 +8,8 @@ include ('includes/navbar.php');
       <div class="Bus-Details padding-bt">
          <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
             <h5 class="font-weight-normal mb-0 text-white">
-               <a type="hidden" class="text-danger mr-3" href="listing.php"><i class="icofont-rounded-left"></i></a>
+            <?php 
+            echo '<a class="text-danger" href=$url><i class="icofont-rounded-left"></i></a>'; ?>
                Bus Details
                <?php
     // Retrieving the data from the URL parameter
@@ -61,7 +62,16 @@ include ('includes/navbar.php');
                  $date = $row['date'];
                  $buscompname = $row['buscompname'];
                  // Output the HTML structure with the retrieved data
+                 $url="listing.php?pickup=".urlencode($pickuploc)."&dropoff=".urlencode($destination) . "&date=".urlencode($date);
                  echo '
+                 <div class="Bus-Details padding-bt">
+   <div class="osahan-header-nav shadow-sm p-3 d-flex align-items-center bg-danger">
+      <h5 class="font-weight-normal mb-0 text-white">
+          <a class="text-danger" href="' . $url . '"><i class="icofont-rounded-left"></i></a>
+         Bus Details
+      </h5>
+   </div>
+</div>
                 <div class="list_item m-0 bg-white">
                  <div class="px-3 py-3 tic-div border-bottom d-flex">
                  <img src="img/listing/item1.png" class="img-fluid border rounded p-1 shape-img mr-3">
@@ -79,7 +89,7 @@ include ('includes/navbar.php');
                        <i class="icofont-star text-muted"></i>
                        <span class="text-dark">4.0</span>
                        <div class="d-flex mt-2">
-                          <p class="m-0"><i class="icofont-google-map mr-1 text-danger"></i><span class="small">'. $begin_location.' to '. $destination .'</span></p>
+                          <p class="m-0"><i class="icofont-google-map mr-1 text-danger"></i><span class="small">'. $pickuploc.' to '. $destination .'</span></p>
                           <p class="small ml-auto mb-0"><i class="icofont-bus mr-1 text-danger"></i> St. $5</p>
                        </div>
                     </div>
@@ -234,5 +244,6 @@ include ('includes/navbar.php');
      
       
       <!-- sidebar -->
+
 
       <?php include ('includes/footer.php');?> 
